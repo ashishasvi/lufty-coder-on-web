@@ -1,8 +1,9 @@
-from flask import Flask, request, send_file
+from flask import Flask, request, send_file,render_template
 import pandas as pd
 import tempfile, os, datetime, re
 from openpyxl import load_workbook
 from openpyxl.styles import PatternFill
+
 
 app = Flask(__name__)
 app.secret_key = "replace-me"
@@ -197,7 +198,7 @@ HTML_FORM = """<!doctype html><title>Lufty Coder</title>
 
 @app.route("/", methods=["GET"])
 def index():
-    return HTML_FORM
+    return render_template("index.html", year=datetime.date.today().year)
 
 @app.route("/process", methods=["POST"])
 def process():
