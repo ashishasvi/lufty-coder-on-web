@@ -1,4 +1,5 @@
 Flask==3.0.3
-gunicorn==22.0.0          # Render’s recommended production WSGI server
+gunicorn==22.0.0
 pandas==2.2.2
-openpyxl==3.1.2           # engine for pandas to read/write .xlsx
+numpy==1.26.4
+openpyxl==3.1.2
