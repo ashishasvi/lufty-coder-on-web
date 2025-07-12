@@ -1,0 +1,25 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lufty Coder Converter</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;max-width:640px;margin:3rem auto;}
+form{border:1px solid #ccc;padding:2rem;border-radius:8px;}
+label{display:block;margin-top:1rem;font-weight:bold;}
+button{margin-top:2rem;padding:0.6rem 1.4rem;font-size:1rem;}
+</style>
+</head>
+<body>
+<h1 style="text-align:center;">Lufty Coder → finalrow.xlsx</h1>
+<form action="/process" method="post" enctype="multipart/form-data">
+<label>Inventory CSV (List Coder):
+<input type="file" name="listcoder" accept=".csv" required></label>
+<label>Received Requests (XLSX):
+<input type="file" name="requests" accept=".xlsx" required></label>
+<button type="submit">Create finalrow.xlsx</button>
+</form>
+<footer style="text-align:center;color:#777;margin-top:3rem;">&copy; {{year}}</footer>
+</body>
+</html>
