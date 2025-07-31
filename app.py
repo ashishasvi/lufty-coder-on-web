@@ -43,7 +43,7 @@ def load_inventory(fileobj):
         "SERIAL NUMBER" : "inscor__Serial_Number__c",
         "CONDITION"     : "inscor__Condition_Code__r.Name",
         "TAG DATE"      : "inscor__Tag_Date__c",
-        "TAGGED BY ONE" : "inscor__Tag_Agency__r.Name",
+        "TAGGED BY ONE" : "Tag_Agency_Merged__c",
         "LAST OPERATOR" : "inscor__Trace__r.Name",
         "SALES PRICE"   : "$PRICE",
     }
@@ -223,7 +223,7 @@ def process():
             match_df.to_excel(writer,    sheet_name="Match value",          index=False)
             unmatched_df.to_excel(writer, sheet_name="Not Matching Values", index=False)
         colour_rows(path)
-        return send_file(path, as_attachment=True, download_name="finalrow.xlsx")
+        return send_file(path, as_attachment=True, download_name=rq.filename)
     except Exception as e:
         return f"Error: {e}", 500
 
